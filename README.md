@@ -88,5 +88,4 @@ ZenithSupport AI is pre-configured for **Streamlit Community Cloud**:
 ## Author
 **Karan Sharma**
 
-## License
-MIT License
+
