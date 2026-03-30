@@ -122,7 +122,6 @@ SCENARIOS = [
         "type": "standard"
     },
 
-    # --- Exception-Heavy Cases (6) ---
     {
         "id": "exc_1",
         "ticket": "I opened these underwear but they don't fit. I want a refund.",
@@ -215,7 +214,6 @@ SCENARIOS = [
         "type": "exception"
     },
 
-    # --- Conflict Cases (3) ---
     {
         "id": "con_1",
         "ticket": "I'm in France and I want to return this opened software I bought yesterday.",
@@ -264,7 +262,6 @@ SCENARIOS = [
         "type": "conflict"
     },
 
-    # --- Not-in-Policy Cases (3) ---
     {
         "id": "nip_1",
         "ticket": "I want a refund because I'm moving and don't want the item anymore, but it's been 60 days.",

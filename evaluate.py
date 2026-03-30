@@ -4,7 +4,6 @@ import time
 import sys
 from datetime import datetime
 
-# Handle different import structures for local vs cloud deployment
 try:
     from ecommerce_agent.src.engine import EcommerceSupportEngine
     from ecommerce_agent.tests.test_scenarios import SCENARIOS

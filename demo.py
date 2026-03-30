@@ -4,14 +4,12 @@ import sys
 import os
 from datetime import datetime
 
-# Handle different import structures for local vs cloud deployment
 try:
     from ecommerce_agent.src.engine import EcommerceSupportEngine
 except ModuleNotFoundError:
     try:
         from src.engine import EcommerceSupportEngine
     except ModuleNotFoundError:
-        # Fallback: add current directory to path
         sys.path.append(os.path.dirname(os.path.abspath(__file__)))
         from src.engine import EcommerceSupportEngine
 
@@ -21,7 +19,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Premium CSS Styling
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
@@ -35,7 +32,6 @@ st.markdown("""
         background-color: #000000;
     }
 
-    /* Card Styling */
     .zenith-card {
         padding: 24px;
         border-radius: 12px;
@@ -70,7 +66,6 @@ st.markdown("""
         color: #fffbeb;
     }
 
-    /* Citation Styling */
     .citation-badge {
         display: inline-block;
         padding: 4px 12px;
@@ -111,14 +106,12 @@ st.markdown("""
         box-shadow: 0 0 20px rgba(37, 99, 235, 0.6);
     }
 
-    /* Sidebar and selectbox improvements */
     .stSelectbox div[data-baseweb="select"] {
         background-color: #0f172a !important;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# Application Header
 col_title, col_logo = st.columns([4, 1])
 with col_title:
     st.title("ZenithSupport AI")
@@ -128,7 +121,6 @@ with col_logo:
 
 st.markdown("---")
 
-# Sidebar Configuration
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/1063/1063376.png", width=50)
     st.header("Order Insights")
@@ -147,7 +139,6 @@ with st.sidebar:
     st.markdown("---")
     st.caption("ZenithSupport AI v1.0.4 - Production Ready")
 
-# Main Interface Layout
 main_col, trace_col = st.columns([3, 2])
 
 with main_col:
@@ -162,7 +153,6 @@ with main_col:
         if not ticket_text:
             st.error("Missing Ticket Content: Please provide the customer query.")
         else:
-            # Prepare Payload
             context = {
                 "order_date": order_date.strftime("%Y-%m-%d"),
                 "delivery_date": delivery_date.strftime("%Y-%m-%d") if delivery_date else None,
@@ -173,14 +163,12 @@ with main_col:
                 "payment_method": payment_method
             }
             
-            # Execute Engine
             try:
                 engine = EcommerceSupportEngine(index_dir="ecommerce_agent/data/index")
-                
+                result = None
                 with st.spinner("Zenith Agents are orchestrating..."):
                     result = engine.run(ticket_text, context)
                 
-                # Success Display
                 st.markdown('### <div class="agent-header">System Resolution</div>', unsafe_allow_html=True)
                 
                 if result.decision.lower() == "needs escalation":
@@ -191,7 +179,6 @@ with main_col:
                 st.write("")
                 st.write(result.customer_response)
                 
-                # Citations
                 if result.citations:
                     st.write("")
                     st.markdown("**Evidence-Based Citations:**")
@@ -212,8 +199,7 @@ with trace_col:
     
     if not process_btn:
         st.info("System Idle. Awaiting execution to display agent step-by-step reasoning logs.")
-    else:
-        # Hierarchical Trace (Simulated logic flow display)
+    elif 'result' in locals() and result:
         with st.expander("Triage Agent", expanded=False):
             st.write("Result: COMPLIANT")
             st.code(f"Intent: RESOLUTION_REQUEST\nContext validation: COMPLETE\nMetadata Extraction: {item_category}")
@@ -229,6 +215,8 @@ with trace_col:
         with st.expander("Compliance Audit", expanded=True):
             st.write("Result: VERIFIED")
             st.success(f"Audit Status: 100% Grounded\nCitations: {len(result.citations)} verified matches")
+    else:
+        st.warning("Trace Unavailable: Engine failed to produce a valid resolution.")
 
 st.markdown("---")
 col_foo1, col_foo2 = st.columns([4, 1])

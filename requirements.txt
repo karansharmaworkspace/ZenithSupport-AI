@@ -4,6 +4,7 @@ langchain-groq
 langchain-huggingface
 langchain-text-splitters
 faiss-cpu
+sentence-transformers
 pydantic>=2.0
 python-dotenv
 streamlit
