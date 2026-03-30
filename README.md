@@ -2,6 +2,8 @@
 
 A multi-agent RAG system designed to resolve customer support tickets with grounding, citations, and safety controls.
 
+**Live Demo:** [zenithsupport-ai.streamlit.app](https://zenithsupport-ai.streamlit.app/)
+
 ## Overview
 This system uses a 4-agent orchestration pattern to process incoming support tickets. It retrieves relevant policies from a FAISS vector store, drafts resolutions based strictly on those policies, and validates the output for compliance and citations.
 
