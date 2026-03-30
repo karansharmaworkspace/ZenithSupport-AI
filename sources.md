@@ -29,4 +29,4 @@ The "Author-Authored" policy pack for the Purple Merit project is synthesized fr
    - Date Accessed: March 30, 2026
 
 ## Methodology
-The internal policies were authored to consolidate these varying public standards into a single, cohesive "Ground Truth" for the Purple Merit AI Assistant. This ensures the RAG system handles multi-category complexity (perishables + electronics) correctly.
+The internal policies were authored to consolidate these varying public standards into a single, cohesive "Ground Truth" for the ZenithSupport AI Engine. This ensures the RAG system handles multi-category complexity (perishables + electronics) correctly.
