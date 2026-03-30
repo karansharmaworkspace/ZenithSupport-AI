@@ -65,6 +65,17 @@ A dictionary containing the following mandatory fields:
    python -m streamlit run ecommerce_agent/demo.py --server.port 8505
    ```
 
+## Deployment (Streamlit Cloud)
+
+ZenithSupport AI is pre-configured for **Streamlit Community Cloud**:
+1.  **Push to GitHub:** Follow the instructions in the Walkthrough.
+2.  **Deploy:** Connect your repository to Streamlit Cloud.
+3.  **Secrets:** In the Streamlit Cloud dashboard, go to **Settings > Secrets** and add:
+    ```toml
+    GROQ_API_KEY = "your-gsk-key-here"
+    ```
+4.  **Main File:** Point to `ecommerce_agent/demo.py`.
+
 ## Evaluation Results
 - **Total Scenarios:** 20
 - **Policy Volume:** 27,065 words (across 14 documents)

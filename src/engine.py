@@ -39,9 +39,17 @@ class FinalResponse(BaseModel):
 
 class EcommerceSupportEngine:
     def __init__(self, index_dir: str, groq_api_key: Optional[str] = None):
+        # Support for Streamlit Cloud Secrets and Local .env
         api_key = groq_api_key or os.getenv("GROQ_API_KEY")
         if not api_key:
-            raise ValueError("GROQ_API_KEY must be provided or set as an environment variable.")
+            try:
+                import streamlit as st
+                api_key = st.secrets.get("GROQ_API_KEY")
+            except Exception:
+                pass
+                
+        if not api_key:
+            raise ValueError("GROQ_API_KEY must be provided, set in .env, or configured in Streamlit Secrets.")
             
         self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         self.vectorstore = FAISS.load_local(index_dir, self.embeddings, allow_dangerous_deserialization=True)
