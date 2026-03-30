@@ -5,6 +5,8 @@ langchain-huggingface
 langchain-text-splitters
 faiss-cpu
 sentence-transformers
+torch
+torchvision
 pydantic>=2.0
 python-dotenv
 streamlit
