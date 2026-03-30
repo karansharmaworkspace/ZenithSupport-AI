@@ -39,7 +39,6 @@ class FinalResponse(BaseModel):
 
 class EcommerceSupportEngine:
     def __init__(self, index_dir: str, groq_api_key: Optional[str] = None):
-        # Support for Streamlit Cloud Secrets and Local .env
         api_key = groq_api_key or os.getenv("GROQ_API_KEY")
         if not api_key:
             try:
@@ -152,7 +151,11 @@ class EcommerceSupportEngine:
         )
 
 if __name__ == "__main__":
-    INDEX_DIR = os.path.join("ecommerce_agent", "data", "index")
+    potential_index = os.path.join("ecommerce_agent", "data", "index")
+    if os.path.exists(potential_index):
+        INDEX_DIR = potential_index
+    else:
+        INDEX_DIR = os.path.join("data", "index")
     try:
         engine = EcommerceSupportEngine(INDEX_DIR)
         

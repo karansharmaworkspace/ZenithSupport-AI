@@ -1,7 +1,19 @@
 import streamlit as st
 import json
+import sys
+import os
 from datetime import datetime
-from ecommerce_agent.src.engine import EcommerceSupportEngine
+
+# Handle different import structures for local vs cloud deployment
+try:
+    from ecommerce_agent.src.engine import EcommerceSupportEngine
+except ModuleNotFoundError:
+    try:
+        from src.engine import EcommerceSupportEngine
+    except ModuleNotFoundError:
+        # Fallback: add current directory to path
+        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+        from src.engine import EcommerceSupportEngine
 
 st.set_page_config(
     page_title="ZenithSupport AI | Premium Support Resolution",

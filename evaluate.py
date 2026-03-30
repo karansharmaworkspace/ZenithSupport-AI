@@ -1,8 +1,22 @@
 import os
 import json
 import time
-from ecommerce_agent.src.engine import EcommerceSupportEngine
-from ecommerce_agent.tests.test_scenarios import SCENARIOS
+import sys
+from datetime import datetime
+
+# Handle different import structures for local vs cloud deployment
+try:
+    from ecommerce_agent.src.engine import EcommerceSupportEngine
+    from ecommerce_agent.tests.test_scenarios import SCENARIOS
+except ModuleNotFoundError:
+    try:
+        from src.engine import EcommerceSupportEngine
+        from tests.test_scenarios import SCENARIOS
+    except ModuleNotFoundError:
+        import os
+        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+        from src.engine import EcommerceSupportEngine
+        from tests.test_scenarios import SCENARIOS
 
 def run_evaluation(index_dir, output_file):
     engine = EcommerceSupportEngine(index_dir)
