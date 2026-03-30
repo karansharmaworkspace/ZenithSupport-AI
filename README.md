@@ -82,5 +82,8 @@ ZenithSupport AI is pre-configured for **Streamlit Community Cloud**:
 - **Citation Coverage:** 100% (Doc + Section + Chunk ID)
 - **Core Accuracy:** 100% (Grounded in retrieved sources via 4-agent validation)
 
+## Author
+**Karan Sharma**
+
 ## License
 MIT License

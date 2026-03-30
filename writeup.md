@@ -1,4 +1,6 @@
 # Technical Architecture Report: ZenithSupport AI
+**Candidate:** Karan Sharma
+**Submission:** Purple Merit AI/ML Engineer Intern Assessment
 
 This report details the architectural design, technical trade-offs, and safety mechanisms of the E-commerce Support Resolution Agent—a multi-agent RAG system optimized for high-precision policy adherence.
 
