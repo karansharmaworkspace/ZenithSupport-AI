@@ -164,7 +164,10 @@ with main_col:
             }
             
             try:
-                engine = EcommerceSupportEngine(index_dir="ecommerce_agent/data/index")
+                potential_index = "ecommerce_agent/data/index"
+                if not os.path.exists(potential_index):
+                    potential_index = "data/index"
+                engine = EcommerceSupportEngine(index_dir=potential_index)
                 result = None
                 with st.spinner("Zenith Agents are orchestrating..."):
                     result = engine.run(ticket_text, context)

@@ -83,6 +83,12 @@ def run_evaluation(index_dir, output_file):
     print(f"Evaluation complete. Report saved to {output_file}")
 
 if __name__ == "__main__":
-    INDEX_DIR = os.path.join("ecommerce_agent", "data", "index")
+    potential_index = "ecommerce_agent/data/index"
+    if not os.path.exists(potential_index):
+        potential_index = "data/index"
+        
     OUTPUT_FILE = "ecommerce_agent/evaluation_report.json"
-    run_evaluation(INDEX_DIR, OUTPUT_FILE)
+    if not os.path.exists("ecommerce_agent"):
+        OUTPUT_FILE = "evaluation_report.json"
+        
+    run_evaluation(potential_index, OUTPUT_FILE)
