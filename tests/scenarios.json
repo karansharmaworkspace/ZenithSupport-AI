@@ -1,0 +1,305 @@
+[
+    {
+        "id": "std_1",
+        "ticket": "I received the wrong size for my shirt. How can I return it?",
+        "context": {
+            "order_date": "2026-03-25",
+            "delivery_date": "2026-03-27",
+            "item_category": "apparel",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Approve",
+        "type": "standard"
+    },
+    {
+        "id": "std_2",
+        "ticket": "My package is 2 days late. Where is it?",
+        "context": {
+            "order_date": "2026-03-20",
+            "delivery_date": null,
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-East",
+            "order_status": "shipped",
+            "payment_method": "PayPal"
+        },
+        "expected_decision": "Inform/Investigate",
+        "type": "standard"
+    },
+    {
+        "id": "std_3",
+        "ticket": "Can I cancel my order? I just placed it 10 minutes ago.",
+        "context": {
+            "order_date": "2026-03-30",
+            "delivery_date": null,
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-West",
+            "order_status": "placed",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Approve",
+        "type": "standard"
+    },
+    {
+        "id": "std_4",
+        "ticket": "The coffee maker I bought is defective. I want a refund.",
+        "context": {
+            "order_date": "2026-03-10",
+            "delivery_date": "2026-03-12",
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-South",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Approve",
+        "type": "standard"
+    },
+    {
+        "id": "std_5",
+        "ticket": "I want to return an unopened game I bought 2 weeks ago.",
+        "context": {
+            "order_date": "2026-03-15",
+            "delivery_date": "2026-03-17",
+            "item_category": "toys",
+            "fulfillment_type": "first-party",
+            "shipping_region": "UK-London",
+            "order_status": "delivered",
+            "payment_method": "Debit Card"
+        },
+        "expected_decision": "Approve",
+        "type": "standard"
+    },
+    {
+        "id": "std_6",
+        "ticket": "How long does it take to get my money back after a return?",
+        "context": {
+            "order_date": "2026-03-01",
+            "delivery_date": "2026-03-05",
+            "item_category": "apparel",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "returned",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Inform",
+        "type": "standard"
+    },
+    {
+        "id": "std_7",
+        "ticket": "I found a better price elsewhere. Can I return my unopened item?",
+        "context": {
+            "order_date": "2026-03-20",
+            "delivery_date": "2026-03-22",
+            "item_category": "home_decor",
+            "fulfillment_type": "first-party",
+            "shipping_region": "CA-Ontario",
+            "order_status": "delivered",
+            "payment_method": "Store Credit"
+        },
+        "expected_decision": "Approve",
+        "type": "standard"
+    },
+    {
+        "id": "std_8",
+        "ticket": "My tracking number isn't working.",
+        "context": {
+            "order_date": "2026-03-28",
+            "delivery_date": null,
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-East",
+            "order_status": "shipped",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Inform",
+        "type": "standard"
+    },
+    {
+        "id": "exc_1",
+        "ticket": "I opened these underwear but they don't fit. I want a refund.",
+        "context": {
+            "order_date": "2026-03-25",
+            "delivery_date": "2026-03-27",
+            "item_category": "hygiene",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Deny",
+        "type": "exception"
+    },
+    {
+        "id": "exc_2",
+        "ticket": "The cookies I ordered arrived melted. I want my money back.",
+        "context": {
+            "order_date": "2026-03-28",
+            "delivery_date": "2026-03-30",
+            "item_category": "perishable",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-South",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Deny",
+        "type": "exception"
+    },
+    {
+        "id": "exc_3",
+        "ticket": "I want to return this 'Final Sale' jacket. It looks different in person.",
+        "context": {
+            "order_date": "2026-03-10",
+            "delivery_date": "2026-03-12",
+            "item_category": "apparel",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "delivered",
+            "payment_method": "PayPal",
+            "is_final_sale": true
+        },
+        "expected_decision": "Deny",
+        "type": "exception"
+    },
+    {
+        "id": "exc_4",
+        "ticket": "I want to return a used video game I opened.",
+        "context": {
+            "order_date": "2026-03-25",
+            "delivery_date": "2026-03-27",
+            "item_category": "software",
+            "fulfillment_type": "first-party",
+            "shipping_region": "UK-Manchester",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Deny",
+        "type": "exception"
+    },
+    {
+        "id": "exc_5",
+        "ticket": "My flowers arrived wilted. Here are the photos.",
+        "context": {
+            "order_date": "2026-03-29",
+            "delivery_date": "2026-03-30",
+            "item_category": "perishable",
+            "fulfillment_type": "first-party",
+            "shipping_region": "FR-Paris",
+            "order_status": "delivered",
+            "payment_method": "Debit Card"
+        },
+        "expected_decision": "Approve",
+        "type": "exception"
+    },
+    {
+        "id": "exc_6",
+        "ticket": "I want to return an opened laptop I've used for a week.",
+        "context": {
+            "order_date": "2026-03-20",
+            "delivery_date": "2026-03-22",
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-West",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Approve with Restocking Fee",
+        "type": "exception"
+    },
+    {
+        "id": "con_1",
+        "ticket": "I'm in France and I want to return this opened software I bought yesterday.",
+        "context": {
+            "order_date": "2026-03-29",
+            "delivery_date": "2026-03-30",
+            "item_category": "software",
+            "fulfillment_type": "first-party",
+            "shipping_region": "EU-France",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Approve (EU Right of Withdrawal)",
+        "type": "conflict"
+    },
+    {
+        "id": "con_2",
+        "ticket": "I bought this from a Marketplace seller and they won't respond to my return request.",
+        "context": {
+            "order_date": "2026-03-20",
+            "delivery_date": "2026-03-22",
+            "item_category": "home_decor",
+            "fulfillment_type": "marketplace_seller",
+            "shipping_region": "US-East",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Escalate (A-to-Z)",
+        "type": "conflict"
+    },
+    {
+        "id": "con_3",
+        "ticket": "I used a coupon for a BOGO deal, but I only want to return one item.",
+        "context": {
+            "order_date": "2026-03-28",
+            "delivery_date": "2026-03-30",
+            "item_category": "apparel",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "delivered",
+            "payment_method": "Credit Card",
+            "is_bogo": true,
+            "coupon_used": "SUMMER50"
+        },
+        "expected_decision": "Partial Refund",
+        "type": "conflict"
+    },
+    {
+        "id": "nip_1",
+        "ticket": "I want a refund because I'm moving and don't want the item anymore, but it's been 60 days.",
+        "context": {
+            "order_date": "2026-01-01",
+            "delivery_date": "2026-01-05",
+            "item_category": "apparel",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-North",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Deny/Abstain",
+        "type": "nip"
+    },
+    {
+        "id": "nip_2",
+        "ticket": "Can I get a discount for my next 5 orders because my first order was late?",
+        "context": {
+            "order_date": "2026-03-01",
+            "delivery_date": "2026-03-10",
+            "item_category": "home_decor",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-East",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Abstain",
+        "type": "nip"
+    },
+    {
+        "id": "nip_3",
+        "ticket": "I want a refund because I saw the same item on a different site for 50% less.",
+        "context": {
+            "order_date": "2026-03-25",
+            "delivery_date": "2026-03-27",
+            "item_category": "electronics",
+            "fulfillment_type": "first-party",
+            "shipping_region": "US-West",
+            "order_status": "delivered",
+            "payment_method": "Credit Card"
+        },
+        "expected_decision": "Deny",
+        "type": "nip"
+    }
+]

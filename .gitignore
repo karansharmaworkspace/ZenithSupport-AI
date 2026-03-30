@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.streamlit/
+ecommerce_agent/data/index/
+evaluation_report.json
+transcripts/
