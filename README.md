@@ -2,7 +2,7 @@
 
 A multi-agent RAG system designed to resolve customer support tickets with grounding, citations, and safety controls.
 
-**Live Demo:** [zenithsupport-ai.streamlit.app](https://zenithsupport-ai.streamlit.app/)
+**Live Demo (Wait for dependencies to install):** [zenithsupport-ai.streamlit.app](https://zenithsupport-ai.streamlit.app/)
 **Video Walkthrough:** [Watch the Technical Overview](https://drive.google.com/file/d/115qV0bWfqCOK7QUni05zW3nyEg1sPTN3/view?usp=sharing)
 
 ## Overview
